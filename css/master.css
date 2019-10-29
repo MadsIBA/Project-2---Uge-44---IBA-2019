@@ -12,6 +12,11 @@ body {
     display: flex;
     justify-content: center;
 }
+.navbar>div{
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+}
 
 .logo{
 position:fixed;
@@ -22,7 +27,7 @@ position:fixed;
     display: block;
     color: #396D73;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 16px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -34,7 +39,6 @@ position:fixed;
 
 .toplines {
     position: fixed;
-    margin-top: 20px;
 }
 
 .bottomlines {
@@ -51,11 +55,11 @@ footer {
 }
 
 .green {
-    padding-top: 5px;
+    padding-top: 8px;
     background-color: #396D73;
 }
 
 .blue {
-    padding-top: 5px;
+    padding-top: 8px;
     background-color: #69B7BF;
 }
