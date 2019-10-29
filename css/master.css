@@ -11,6 +11,11 @@ body {
     width: 100%;
 }
 
+.logo{
+  background-repeat: no-repeat;
+  height: 250px;
+}
+
 .navbar a {
     float: left;
     display: block;
