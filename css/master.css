@@ -1,6 +1,10 @@
+body{
+  margin:0;
+  background-color: rgb(105, 183, 191, 0.3);
+}
 .navbar{
   overflow: hidden;
-  background-color: #333;
+  background-color: #ffff;
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,4 +23,30 @@
 .navbar a:hover {
   background: #ddd;
   color: black;
+}
+
+.toplines{
+  position: fixed;
+margin-top: 20px;
+}
+
+.bottomlines{
+  margin-top: -20px;
+}
+
+footer{
+  padding-top: 20px;
+  position:fixed;
+  bottom:0;
+  height: 10px;
+  background-color: white;
+  width: 100%;
+}
+.green{
+  padding-top: 5px;
+  background-color: #396D73;
+}
+.blue{
+  padding-top: 5px;
+  background-color: #69B7BF;
 }
