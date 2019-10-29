@@ -1,71 +1,47 @@
+@import url(//db.onlinewebfonts.com/c/736cf5b08b01082a3645e14038868e20?family=Krungthep);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap');
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
-    background-color: rgb(105, 183, 191, 0.3);
+    background-color:rgba(105, 183, 191, 0.3);
+    font-family: 'Roboto', sans-serif;
 }
-
-.navbar {
-    overflow: hidden;
-    background-color: #ffff;
-    position: sticky;
-    top: 0;
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    background-color: white;
+}
+.logo {
+    position: fixed;
+    top: 18.5px;
+}
+a {
+    font-family: "Krungthep";
+    color: #006D74;
+    text-decoration: none;
+}
+.green {
     width: 100%;
+    height: 7.3px;
+    background-color: #006D74;
+}
+.blue {
+    width: 100%;
+    height: 7.3px;
+    background-color: #13B8C1;
+}
+#text {
+    text-align: center;
+    padding-top: 50px;
+}
+main {
     display: flex;
     justify-content: center;
 }
-
-.navbar>div {
-    margin-right: 150px;
-    margin-left: 150px;
-    padding-top: 20px;
-}
-
-.logo {
-    position: fixed;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    color: #396D73;
-    text-align: center;
-    padding: 16px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.navbar a:hover {
-    background: #ddd;
-    color: black;
-}
-
-.toplines {
-    position: fixed;
-}
-
-.bottomlines {
-    margin-top: -20px;
-}
-
 footer {
-    padding-top: 20px;
-    position: fixed;
-    bottom: 0;
-    height: 10px;
-    background-color: white;
-    width: 100%;
-}
-
-.green {
-    padding-top: 7.3px;
-    background-color: #396D73;
-
-}
-
-.blue {
-    padding-top: 7.3px;
-    background-color: #69B7BF;
+    padding-top: 50px;
 }
