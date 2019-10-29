@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: rgb(105, 183, 191, 0.3);
@@ -12,14 +16,15 @@ body {
     display: flex;
     justify-content: center;
 }
-.navbar>div{
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-top: 20px;
+
+.navbar>div {
+    margin-right: 150px;
+    margin-left: 150px;
+    padding-top: 20px;
 }
 
-.logo{
-position:fixed;
+.logo {
+    position: fixed;
 }
 
 .navbar a {
