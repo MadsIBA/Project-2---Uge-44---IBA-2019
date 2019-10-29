@@ -33,8 +33,8 @@ let rightPoly = function () {
 
         // Dør1
         rctx.beginPath();
-        rctx.arc(20, 320, 80, 375 * Math.PI/180, 270 * Math.PI/180, true); //arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean):
-        rctx.lineTo(20, 320)
+        rctx.arc(180, 320, 80, 375 * Math.PI/180, 270 * Math.PI/180, true); //arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean):
+        rctx.lineTo(180, 320)
         rctx.closePath();
         rctx.strokeStyle = "black";
         rctx.lineWidth = 5;
@@ -44,8 +44,8 @@ let rightPoly = function () {
 
         // Dør2
         rctx.beginPath();
-        rctx.arc(140, 260, 80, 90 * Math.PI/180, 345 * Math.PI/180, true); //arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean):
-        rctx.lineTo(140, 260)
+        rctx.arc(180, 380, 80, 90 * Math.PI/180, 345 * Math.PI/180, true); //arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean):
+        rctx.lineTo(180, 380)
         rctx.closePath();
         rctx.strokeStyle = "black";
         rctx.lineWidth = 5;
@@ -66,8 +66,8 @@ let rightPoly = function () {
 
         //Dør4
         rctx.beginPath();
-        rctx.arc(220, 440, 80, 270 * Math.PI/180, 165 * Math.PI/180, true); //arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean):
-        rctx.lineTo(220, 440)
+        rctx.arc(100, 320, 80, 270 * Math.PI/180, 165 * Math.PI/180, true); //arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean):
+        rctx.lineTo(100, 320)
         rctx.closePath();
         rctx.strokeStyle = "black";
         rctx.lineWidth = 5;
