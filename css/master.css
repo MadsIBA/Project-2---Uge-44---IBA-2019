@@ -9,11 +9,12 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .logo{
-  background-repeat: no-repeat;
-  height: 250px;
+position:fixed;
 }
 
 .navbar a {
