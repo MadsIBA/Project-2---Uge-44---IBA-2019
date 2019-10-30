@@ -18,6 +18,19 @@ let Canvas = {
         this.color = color;
         this.prep();
     },
+    init2(canvasId, color) {
+        this.canvas = $(canvasId);
+        this.context = this.canvas.getContext("2d");
+        this.color = color;
+        this.prep();
+
+        let height = document.getElementById("height").value;
+        let width = document.getElementById("width").value;
+        
+        this.canvas.height = height;
+        this.canvas.width = width;
+        
+    },
     prep() {
         this.context.fillStyle = this.color;
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -110,14 +123,7 @@ let initialize = function () {
     mycv1.init('myCanvas1', 'transparent');
     mycv1.canvas.addEventListener('click', select);
     mycv2 = Object.create(Canvas);
-    mycv2.init('myCanvas2', 'transparent');
-    
-    let width = document.getElementById("width").value;
-    let height = document.getElementById("lcheight").value;
-    
-    mycv2.init("myCanvas2").width = width;
-    mycv2.init("myCanvas2").height = height;
-    
+    mycv2.init2('myCanvas2', 'transparent');
     // create objects
     // put in array
     let shape1 = Object.create(Shape);
