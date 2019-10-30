@@ -12,25 +12,24 @@
 
 <body>
     <header>
-    <nav>
-        <a href="index.html">Design dit drømme køkken </a>
-        <div class="logo">
-            <img src="foto/PNGKrag.png" width="248.7px"></img>
+        <nav>
+            <a href="index.html">Design dit drømme køkken </a>
+            <div class="logo">
+                <img src="foto/PNGKrag.png" width="248.7px"></img>
+            </div>
+            <a href="raport.html">Læs om Køkken projektet </a>
+        </nav>
+        <div id="topline">
+            <div class="green"></div>
+            <div class="blue"></div>
         </div>
-        <a href="raport.html">Læs om Køkken projektet </a>
-    </nav>
-    <div id="topline">
-        <div class="green"></div>
-        <div class="blue"></div>
-    </div>
     </header>
     <div id="text">
         <h1>Project 2 - Uge 44 - IBA 2019</h1>
 
     </div>
     <main>
-        <canvas id="myCanvas2" width="400" height="400" style="outline: 1px solid rgb(0, 0, 0); float:left;">
-            <script src="js/kitchen.js"></script>
+        <canvas id="myCanvas2" style="outline: 1px solid rgb(0, 0, 0); float:left;">
             <p>Powered by &html;5 canvas</p>
         </canvas>
         <canvas id="myCanvas1" width="100" height="400"
@@ -39,24 +38,35 @@
         </canvas>
     </main>
 
+    <center>
+        <form id="form" onsubmit="initialize();return false;">
+            <label for="width">Enter a width and height in pixels</label>
+            <input id="width" type="number" min="500" max="" step="1" placeholder="width (500min)" value="500"
+                required />
+            <input id="height" type="number" min="500" max="" step="1" placeholder="height (500min)" value="500"
+                required />
+            <input type="submit">
+        </form>
+    </center>
+
     <div id="text2">
-      <p>
-          Select shapes from right canvas and reporduce them in the
-          left canvas where the mouse is clicked.
-      </p>
+        <p>
+            Select shapes from right canvas and reporduce them in the
+            left canvas where the mouse is clicked.
+        </p>
     </div>
 
 
     <footer>
-            <div class="green"></div>
-            <div class="blue"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
         <div class="flex">
-          <h2> Ring på +45 45454545 </h2>
+            <h2> Ring på +45 45454545 </h2>
 
-          <div class="sprite">
-          </div>
+            <div class="sprite">
+            </div>
 
-          <h2> Adresse HuginMuninvej 45 </h2>
+            <h2> Adresse HuginMuninvej 45 </h2>
         </div>
     </footer>
 </body>

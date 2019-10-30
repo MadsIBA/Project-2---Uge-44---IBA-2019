@@ -111,6 +111,13 @@ let initialize = function () {
     mycv1.canvas.addEventListener('click', select);
     mycv2 = Object.create(Canvas);
     mycv2.init('myCanvas2', 'transparent');
+    
+    let width = document.getElementById("width").value;
+    let height = document.getElementById("lcheight").value;
+    
+    mycv2.init("myCanvas2").width = width;
+    mycv2.init("myCanvas2").height = height;
+    
     // create objects
     // put in array
     let shape1 = Object.create(Shape);
