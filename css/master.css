@@ -62,10 +62,7 @@ h2{
     color: #006D74;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-}
+
 .flex{
   display: flex;
   justify-content: space-around;
