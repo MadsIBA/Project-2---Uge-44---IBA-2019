@@ -45,6 +45,23 @@ main {
     display: flex;
     justify-content: center;
 }
+.flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.sprite {
+display: block;
+width: 100px;
+height: 100px;
+background: url('fugl11.png') 0 0 no-repeat; -webkit-animation: play 1.2s steps(10) infinite;
+animation-delay: 0.5s;
+}
+@-webkit-keyframes play {
+0%{background-position:0px;}
+100% { background-position: -1000px; }
+}
+
 footer {
     padding-top: 50px;
 }
