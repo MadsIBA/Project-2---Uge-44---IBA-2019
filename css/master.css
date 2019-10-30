@@ -15,7 +15,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 71px;
     background-color: white;
 }
 .logo {
@@ -33,6 +33,7 @@ a {
 }
 
 h2{
+  margin-top: 40px;
   font-family: "roboto";
   color: #006D74;
   text-decoration: none;
