@@ -15,12 +15,12 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 70.5px;
+    padding-top: 20px;
     background-color: white;
 }
 .logo {
     position: fixed;
-    top: 18.5px;
+    top: 1px;
 }
 
 a {
@@ -29,7 +29,6 @@ a {
     text-decoration: none;
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: -65px;
 }
 
 h2{
@@ -86,9 +85,11 @@ animation-direction: alternate-reverse;
 }
 
 footer {
-  margin-top: 50px;
   width: 100%;
     background-color: #ffff;
     position:sticky;
     bottom:0;
+}
+iframe {
+  height: 91vh;
 }
