@@ -54,7 +54,18 @@ h2{
 #text {
     text-align: center;
     padding-top: 50px;
+    font-family: "roboto";
+    color: #006D74;
 }
+
+#text2 {
+    text-align: center;
+    padding-top: 5px;
+    font-family: "roboto";
+    color: #006D74;
+    font-weight: bold;
+}
+
 main {
     display: flex;
     justify-content: center;
