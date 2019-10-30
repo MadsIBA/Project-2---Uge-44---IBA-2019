@@ -64,6 +64,37 @@ let Shape = {
     }
 };
 
+let Circle = {
+    init(cv, x, y, radius, sAngle, eAngle, rotation, color,) {
+        this.ctx = cv.context;
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.sAngle = sAngle;
+        this.eAngle = eAngle;
+        this.rotation = rotation;
+        this.color = color;
+        this.lx1 = this.x;
+        this.ly1 = this.y;
+    },
+
+    draw() {
+        this.ctx.beginPath();
+        this.ctx.fillStyle = this.color;
+        this.ctx.arc(this.x, this.y, this.radius, this.sAngle, this.eAngle, this.rotation);
+        this.ctx.lineTo(this.lx1, this.ly1);
+        this.ctx.closePath();
+        this.ctx.fill();
+        
+        
+    },
+
+    move(dx, dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+};
+
 
 'use strict';
 
@@ -88,9 +119,12 @@ let initialize = function () {
     shape2.init(mycv1, 20, 80, 40, 60, 'green');
     let shape3 = Object.create(Shape);
     shape3.init(mycv1, 20, 160, 60, 60, 'red');
+    let shape4 = Object.create(Circle);
+    shape4.init(mycv1, 60, 280, 40, 0 * Math.PI/180, 245 * Math.PI/180, true, 'black');
     shapes.push(shape1);
     shapes.push(shape2);
     shapes.push(shape3);
+    shapes.push(shape4);
     repeater(mycv1, shapes);
 }
 
@@ -113,9 +147,13 @@ let repeater = function (cv, arr) {
 let select = function (ev) {
     for (let i = 0; i < shapes.length; i++) {
         let cx = shapes[i].ctx;
+
         cx.beginPath();
         cx.rect(shapes[i].x, shapes[i].y, shapes[i].width, shapes[i].height);
+        
+        cx.arc(shapes[i].x, shapes[i].y, shapes[i].radius, shapes[i].sAngle, shapes[i].eAngle, shapes[i].rotation);
         cx.closePath();
+        
         let bb = this.getBoundingClientRect();    // get canvas as std obj
         // convert mouse coordinates to canvas coordinates
         let x = (ev.clientX - bb.left) * (this.width / bb.width);
@@ -129,12 +167,18 @@ let select = function (ev) {
                     // convert mouse coordinates to canvas coordinates
                     let x1 = (e.clientX - bb1.left) * (this.width / bb1.width);
                     let y1 = (e.clientY - bb1.top) * (this.height / bb1.height);
-                    let obj = Object.create(Shape); // create new obj 
+                    let obj = Object.create(Shape); // create new obj Shape
                     // with adapted properties
                     obj.init(mycv2, x1, y1, 
                                 shapes[i].width, shapes[i].height,
                                 shapes[i].color);
-                    othershapes.push(obj);
+
+                    let obj2 = Object.create(Circle); // create new obj Circle
+                    obj2.init(mycv2, x1, y1,
+                                shapes[i].radius, shapes[i].sAngle, shapes[i].eAngle, shapes[i].rotation,
+                                shapes[i].color);
+                    othershapes.push(obj, obj2);
+                    
                     mycv1.canvas.removeEventListener('click', select);
                     repeater(mycv2, othershapes);
                     mycv2.canvas.removeEventListener('click', placeInRoom);
