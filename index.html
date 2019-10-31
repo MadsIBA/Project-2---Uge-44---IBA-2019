@@ -34,11 +34,12 @@
     <canvas id="myCanvas1" width="250" height="400" style="outline: 1px solid rgb(0, 0, 0); margin-left:20px;">
       <p>Powered by &html;5 canvas</p>
     </canvas>
-    <form id="form" onsubmit="initialize();return false;">
+    <form id="form" onsubmit="initialize();return false;" onreset="window.location.reload()">
       <label for="width">Indtast dit køkkens højde og bredde i cm</label>
       <input id="width" type="number" min="100" max="" step="1" placeholder="" value="600" required />
       <input id="height" type="number" min="100" max="" step="1" placeholder="" value="400" required />
       <input type="submit" value="Ændre">
+      <input type="reset" value="Nulstil">
     </form>
     <div id="text2">
       <p>
