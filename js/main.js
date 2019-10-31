@@ -29,7 +29,6 @@ let Canvas = {
         
         this.canvas.height = height;
         this.canvas.width = width;
-        
     },
     prep() {
         this.context.fillStyle = this.color;
@@ -98,8 +97,6 @@ let Circle = {
         this.ctx.lineTo(this.lx1, this.ly1);
         this.ctx.closePath();
         this.ctx.fill();
-        
-        
     },
 
     move(dx, dy) {
@@ -125,19 +122,43 @@ let initialize = function () {
     mycv2 = Object.create(Canvas);
     mycv2.init2('myCanvas2', 'transparent');
     // create objects
-    // put in array
     let shape1 = Object.create(Shape);
-    shape1.init(mycv1, 20, 20, 60, 40, 'blue');
+    shape1.init(mycv1, 160, 20, 60, 40, 'blue');
     let shape2 = Object.create(Shape);
-    shape2.init(mycv1, 20, 80, 40, 60, 'green');
+    shape2.init(mycv1, 160, 90, 40, 60, 'green');
     let shape3 = Object.create(Shape);
-    shape3.init(mycv1, 20, 160, 60, 60, 'red');
+    shape3.init(mycv1, 160, 180, 60, 60, 'red');
+    //Doors
     let shape4 = Object.create(Circle);
-    shape4.init(mycv1, 60, 280, 40, 0 * Math.PI/180, 245 * Math.PI/180, true, 'black');
+    shape4.init(mycv1, 60, 190, 40, 180 * Math.PI/180, 285 * Math.PI/180, false, 'black');
+    let shape5 = Object.create(Circle);
+    shape5.init(mycv1, 90, 190, 40, 0 * Math.PI/180, 255 * Math.PI/180, true, 'black');
+    let shape6 = Object.create(Circle);
+    shape6.init(mycv1, 60, 200, 40, 180 * Math.PI/180, 75 * Math.PI/180, true, 'black');
+    let shape7 = Object.create(Circle);
+    shape7.init(mycv1, 90, 200, 40, 0 * Math.PI/180, 105 * Math.PI/180, false, 'black');
+
+    let shape8 = Object.create(Circle);
+    shape8.init(mycv1, 70, 60, 40, 270 * Math.PI/180, 165 * Math.PI/180, true, 'black');
+    let shape9 = Object.create(Circle);
+    shape9.init(mycv1, 80, 60, 40, 270 * Math.PI/180, 15 * Math.PI/180, false, 'black');
+    let shape10 = Object.create(Circle);
+    shape10.init(mycv1, 70, 90, 40, 90 * Math.PI/180, 195 * Math.PI/180, false, 'black');
+    let shape11 = Object.create(Circle);
+    shape11.init(mycv1, 80, 90, 40, 90 * Math.PI/180, 345 * Math.PI/180, true, 'black');
+    
+    // put in array
     shapes.push(shape1);
     shapes.push(shape2);
     shapes.push(shape3);
     shapes.push(shape4);
+    shapes.push(shape5);
+    shapes.push(shape6);
+    shapes.push(shape7);
+    shapes.push(shape8);
+    shapes.push(shape9);
+    shapes.push(shape10);
+    shapes.push(shape11);
     repeater(mycv1, shapes);
 }
 
@@ -165,6 +186,7 @@ let select = function (ev) {
         cx.rect(shapes[i].x, shapes[i].y, shapes[i].width, shapes[i].height);
         
         cx.arc(shapes[i].x, shapes[i].y, shapes[i].radius, shapes[i].sAngle, shapes[i].eAngle, shapes[i].rotation);
+        cx.lineTo(shapes[i].lx1, shapes[i].ly1);
         cx.closePath();
         
         let bb = this.getBoundingClientRect();    // get canvas as std obj
@@ -185,7 +207,6 @@ let select = function (ev) {
                     obj.init(mycv2, x1, y1, 
                                 shapes[i].width, shapes[i].height,
                                 shapes[i].color);
-
                     let obj2 = Object.create(Circle); // create new obj Circle
                     obj2.init(mycv2, x1, y1,
                                 shapes[i].radius, shapes[i].sAngle, shapes[i].eAngle, shapes[i].rotation,
