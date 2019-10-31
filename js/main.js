@@ -1,16 +1,11 @@
 'use strict';
-/**
- * nQuery, *the* JS Framework
- */
+
+// Save some lines
 var $ = function (foo) {
-    return document.getElementById(foo);    // save keystrokes
+    return document.getElementById(foo);
 }
 
-
-/*globals document, window */
-/**
- * Canvas object
- */
+// Canvas object
 let Canvas = {
     init(canvasId, color) {
         this.canvas = $(canvasId);
@@ -48,13 +43,7 @@ let Canvas = {
     }
 };
 
-
-/*globals document, window */
-'use strict';
-
-/**
- * Shape object, with added move method
- */
+// Shape object, with added move method
 let Shape = {
     init(cv, x, y, width, height, color) {
         this.ctx = cv.context;
@@ -108,27 +97,23 @@ let Circle = {
 
 'use strict';
 
-/* 
- * nmlCanvas80.js
- */
+
 let initialize = function () {
-    /*
-     * create two canvases and put two shapes into the right one
-     * via an array
-     */
+    
+    // Create two canvases and put two shapes into the right one via an array
     mycv1 = Object.create(Canvas);
     mycv1.init('myCanvas1', 'transparent');
     mycv1.canvas.addEventListener('click', select);
     mycv2 = Object.create(Canvas);
     mycv2.init2('myCanvas2', 'transparent');
-    // create objects
+    // Create Shape objects
     let shape1 = Object.create(Shape);
     shape1.init(mycv1, 160, 20, 60, 40, 'blue');
     let shape2 = Object.create(Shape);
     shape2.init(mycv1, 160, 90, 40, 60, 'green');
     let shape3 = Object.create(Shape);
     shape3.init(mycv1, 160, 180, 60, 60, 'red');
-    //Doors
+    // Create Doors objects
     let shape4 = Object.create(Circle);
     shape4.init(mycv1, 60, 190, 40, 180 * Math.PI/180, 285 * Math.PI/180, false, 'black');
     let shape5 = Object.create(Circle);
@@ -137,7 +122,6 @@ let initialize = function () {
     shape6.init(mycv1, 60, 200, 40, 180 * Math.PI/180, 75 * Math.PI/180, true, 'black');
     let shape7 = Object.create(Circle);
     shape7.init(mycv1, 90, 200, 40, 0 * Math.PI/180, 105 * Math.PI/180, false, 'black');
-
     let shape8 = Object.create(Circle);
     shape8.init(mycv1, 70, 60, 40, 270 * Math.PI/180, 165 * Math.PI/180, true, 'black');
     let shape9 = Object.create(Circle);
@@ -146,8 +130,7 @@ let initialize = function () {
     shape10.init(mycv1, 70, 90, 40, 90 * Math.PI/180, 195 * Math.PI/180, false, 'black');
     let shape11 = Object.create(Circle);
     shape11.init(mycv1, 80, 90, 40, 90 * Math.PI/180, 345 * Math.PI/180, true, 'black');
-    
-    // put in array
+    // Put objects in array
     shapes.push(shape1);
     shapes.push(shape2);
     shapes.push(shape3);
@@ -163,7 +146,7 @@ let initialize = function () {
 }
 
 let redraw = function (cv, arr) {
-    /* clear and redraw canvas from an array */
+    // Clear and redraw canvas from an array
     cv.clear();
     cv.prep();
     for (var i = 0; i < arr.length; i++) {
@@ -172,9 +155,8 @@ let redraw = function (cv, arr) {
 }
 
 let repeater = function (cv, arr) {
-    /* if this is an animation build a setInterval loop here
-     * if not, just draw
-     */
+    // If this is an animation build a setInterval loop here
+    // If not, just draw
     redraw(cv, arr);
 }
 
