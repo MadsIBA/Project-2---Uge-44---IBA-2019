@@ -88,15 +88,31 @@ let Circle = {
         this.ctx.fill();
     },
 
+    
+};
+
+// Text
+let Text = {
+    init(cv, x, y, text, color,) {
+        this.ctx = cv.context;
+        this.x = x;
+        this.y = y;
+        this.text = text;
+        this.color = color;
+        
+    },
+
+    draw() {
+        this.ctx.font = "12px Arial";
+        this.ctx.fillStyle = this.color;
+        this.ctx.fillText(this.text, this.x, this.y);
+    },
+
     move(dx, dy) {
         this.x += dx;
         this.y += dy;
     }
-};
-
-
-'use strict';
-
+}
 
 let initialize = function () {
 
@@ -108,28 +124,37 @@ let initialize = function () {
     mycv2.init2('myCanvas2', 'transparent');
     // Create Shape objects
     let shape1 = Object.create(Shape);
-    shape1.init(mycv1, 160, 20, 60, 40, 'blue');
+    shape1.init(mycv1, 160, 30, 60, 40, 'blue');
     let shape2 = Object.create(Shape);
-    shape2.init(mycv1, 160, 90, 40, 60, 'green');
+    shape2.init(mycv1, 160, 100, 40, 60, 'green');
     let shape3 = Object.create(Shape);
-    shape3.init(mycv1, 160, 180, 60, 60, 'red');
+    shape3.init(mycv1, 160, 190, 60, 60, 'red');
+    let shape4 = Object.create(Shape);
+    shape4.init(mycv1, 20, 290, 150, 100, 'grey');
     // Create Doors objects
-    let shape4 = Object.create(Circle);
-    shape4.init(mycv1, 60, 190, 40, 180 * Math.PI / 180, 285 * Math.PI / 180, false, 'black');
     let shape5 = Object.create(Circle);
-    shape5.init(mycv1, 90, 190, 40, 0 * Math.PI / 180, 255 * Math.PI / 180, true, 'black');
+    shape5.init(mycv1, 60, 200, 40, 180 * Math.PI / 180, 285 * Math.PI / 180, false, 'black');
     let shape6 = Object.create(Circle);
-    shape6.init(mycv1, 60, 200, 40, 180 * Math.PI / 180, 75 * Math.PI / 180, true, 'black');
+    shape6.init(mycv1, 90, 200, 40, 0 * Math.PI / 180, 255 * Math.PI / 180, true, 'black');
     let shape7 = Object.create(Circle);
-    shape7.init(mycv1, 90, 200, 40, 0 * Math.PI / 180, 105 * Math.PI / 180, false, 'black');
+    shape7.init(mycv1, 60, 210, 40, 180 * Math.PI / 180, 75 * Math.PI / 180, true, 'black');
     let shape8 = Object.create(Circle);
-    shape8.init(mycv1, 70, 60, 40, 270 * Math.PI / 180, 165 * Math.PI / 180, true, 'black');
+    shape8.init(mycv1, 90, 210, 40, 0 * Math.PI / 180, 105 * Math.PI / 180, false, 'black');
     let shape9 = Object.create(Circle);
-    shape9.init(mycv1, 80, 60, 40, 270 * Math.PI / 180, 15 * Math.PI / 180, false, 'black');
+    shape9.init(mycv1, 70, 70, 40, 270 * Math.PI / 180, 165 * Math.PI / 180, true, 'black');
     let shape10 = Object.create(Circle);
-    shape10.init(mycv1, 70, 90, 40, 90 * Math.PI / 180, 195 * Math.PI / 180, false, 'black');
+    shape10.init(mycv1, 80, 70, 40, 270 * Math.PI / 180, 15 * Math.PI / 180, false, 'black');
     let shape11 = Object.create(Circle);
-    shape11.init(mycv1, 80, 90, 40, 90 * Math.PI / 180, 345 * Math.PI / 180, true, 'black');
+    shape11.init(mycv1, 70, 100, 40, 90 * Math.PI / 180, 195 * Math.PI / 180, false, 'black');
+    let shape12 = Object.create(Circle);
+    shape12.init(mycv1, 80, 100, 40, 90 * Math.PI / 180, 345 * Math.PI / 180, true, 'black');
+    // Create Text objects
+    let shape13 = Object.create(Text);
+    shape13.init(mycv1, 60, 15, "Doors", "black");
+    let shape14 = Object.create(Text);
+    shape14.init(mycv1, 140, 15, "Kitchen Elements", "black");
+    let shape15 = Object.create(Text);
+    shape15.init(mycv1, 60, 280, "Kitchen Table", "black");
     // Put objects in array
     shapes.push(shape1);
     shapes.push(shape2);
@@ -142,6 +167,10 @@ let initialize = function () {
     shapes.push(shape9);
     shapes.push(shape10);
     shapes.push(shape11);
+    shapes.push(shape12);
+    shapes.push(shape13);
+    shapes.push(shape14);
+    shapes.push(shape15);
     repeater(mycv1, shapes);
 }
 
