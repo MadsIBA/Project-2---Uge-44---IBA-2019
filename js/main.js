@@ -116,7 +116,7 @@ let Text = {
 
 let initialize = function () {
 
-    // Create two canvases and put two shapes into the right one via an array
+    // Create two canvases and put our shapes into the tool canvas
     mycv1 = Object.create(Canvas);
     mycv1.init('myCanvas1', 'transparent');
     mycv1.canvas.addEventListener('click', select);
