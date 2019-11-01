@@ -77,7 +77,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 350px;
+    height: 100px;
 }
 
 .sprite {
@@ -102,7 +102,8 @@ h2 {
 
 footer {
     width: 100%;
-    background-color: rgb(31, 31, 31);
+    background-color: #ffff;
+
 }
 
 iframe {
